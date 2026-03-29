@@ -10,14 +10,18 @@
     "opencart",
     "oc",
     "playfulsparkle",
-    "bank transfer",
-    "fee"
+    "popup",
+    "dialog",
+    "modal",
+    "exit-intent",
+    "scroll-trigger",
+    "announcement",
+    "promotion",
+    "marketing",
+    "lead-generation"
   ],
   "author": "zsoltoroszlany82 <zsolt.oroszlany@playfulsparkle.com>",
   "license": "GPL",
-  "dependencies": {
-    "fs": "^0.0.1-security"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/playfulsparkle/oc4_popup_dialog_box.git"
@@ -25,6 +29,7 @@
   "devDependencies": {
     "archiver": "^7.0.1",
     "cssnano": "^7.1.3",
+    "fs": "^0.0.1-security",
     "postcss": "^8.5.8",
     "terser": "^5.46.1"
   }
