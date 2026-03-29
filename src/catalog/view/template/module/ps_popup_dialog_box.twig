@@ -4,7 +4,7 @@
 	style="--width: {{ width | escape('html_attr') }}px;
                --height: {{ height | escape('html_attr') }}px;
                --bg-color: {{ bg_color | escape('html_attr') }};
-							 --bg-image: {% if bg_image %}url('{{ bg_image | escape('html_attr') }}'){% else %}none{% endif %};
+							 {% if bg_image %}--bg-image: url('{{ bg_image | escape('html_attr') }}');{% endif %}
                --box-shadow-color: {{ box_shadow_color | escape('html_attr') }};
                --box-shadow-opacity: {{ box_shadow_opacity | escape('html_attr') }};
                --backdrop-color: {{ backdrop_color | escape('html_attr') }};

@@ -5,7 +5,7 @@
     max-width: none;
     max-height: none;
     border: 0;
-    background: var(--bg-color, #ffffff) var(--bg-image) center / contain no-repeat;
+    background: var(--bg-color, #ffffff) var(--bg-image, none) center / contain no-repeat;
     width: var(--width, 640px);
     height: var(--height, 480px);
     border-radius: var(--border-radius, 16px);

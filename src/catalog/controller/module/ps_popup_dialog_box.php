@@ -29,7 +29,7 @@ class PsPopupDialogBox extends \Opencart\System\Engine\Controller
         $language_id = $this->config->get('config_language_id');
 
         $data['content'] = isset($setting['content'][$language_id]) ? html_entity_decode($setting['content'][$language_id], ENT_QUOTES, 'UTF-8') : '';
-        $data['bg_image'] = isset($setting['bg_image'][$language_id]['image']) ? $this->config->get('config_url') . 'image/' . html_entity_decode($setting['bg_image'][$language_id]['image'], ENT_QUOTES, 'UTF-8') : '';
+        $data['bg_image'] = isset($setting['bg_image'][$language_id]['image']) && $setting['bg_image'][$language_id]['image'] ? $this->config->get('config_url') . 'image/' . html_entity_decode($setting['bg_image'][$language_id]['image'], ENT_QUOTES, 'UTF-8') : '';
 
         $positionMap = [
             'top_left' => ['position' => 'top-left', 'suffix' => 'TopLeft'],
