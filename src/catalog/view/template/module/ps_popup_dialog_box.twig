@@ -19,7 +19,7 @@
 			data-close-overlay-click="{{ close_overlay_click | escape('html_attr') }}"
 		>
 	<form class="dialog-body" method="dialog">
-		<button class="dialog-btn-close" type="submit" value="close">
+		<button class="dialog-btn-close" type="submit" value="close" aria-label="{{ btn_close_popup | escape('html_attr') }}">
 			<i class="fa-solid fa-xmark"></i>
 		</button>
 		<div>{{ content | raw }}</div>
