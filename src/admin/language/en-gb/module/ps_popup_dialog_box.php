@@ -39,6 +39,7 @@ $_['entry_name']                = 'Module Name';
 $_['entry_position']            = 'Position';
 $_['entry_trigger']             = 'Trigger';
 $_['entry_content']             = 'Content';
+$_['entry_cookie_name']         = 'Cookie Name';
 $_['entry_background_image']    = 'Background image';
 $_['entry_background_color']    = 'Background color';
 $_['entry_box_shadow_color']    = 'Box shadow color';
@@ -56,9 +57,16 @@ $_['entry_width']               = 'Width';
 $_['entry_height']              = 'Height';
 $_['entry_status']              = 'Status';
 
+// Button
+$_['btn_generate_cookie_name']  = 'Generate Cookie Name';
+
+// Help
+$_['help_cookie_name'] = 'Identifies the popup state in the browser (shown or closed). Must be unique. Use only letters, numbers, and underscores.';
+
 // Error
 $_['error_permission']          = 'Warning: You do not have permission to modify Popup Dialog Box module!';
 $_['error_name']                = 'Module Name must be between 3 and 64 characters!';
+$_['error_cookie_name']         = 'Cookie name must be 3-24 characters long, contain only letters, numbers, underscores, hyphens, or dots; cannot start with a number or \'__\'.';
 $_['error_page_load_delay']     = 'Delay must be a positive number in milliseconds!';
 $_['error_scroll_threshold']    = 'Scroll distance must be a positive number in pixels!';
 $_['error_width']               = 'Width required!';

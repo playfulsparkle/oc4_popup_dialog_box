@@ -91,6 +91,7 @@ class PsPopupDialogBox extends \Opencart\System\Engine\Controller
         $data['backdrop_color'] = $setting['backdrop_color'];
         $data['backdrop_opacity'] = $setting['backdrop_opacity'];
         $data['border_radius'] = $setting['border_radius'];
+        $data['cookie_name'] = $setting['cookie_name'];
         $data['module'] = $module++;
 
         return $this->load->view('extension/ps_popup_dialog_box/module/ps_popup_dialog_box', $data);

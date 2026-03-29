@@ -36,6 +36,20 @@
 								</div>
 							</div>
 
+							<div class="row mb-3 required">
+								<label for="input-cookie-name" class="col-sm-2 col-form-label">{{ entry_cookie_name }}</label>
+								<div class="col-sm-10">
+									<div class="input-group">
+										<input type="text" name="cookie_name" value="{{ cookie_name }}" placeholder="{{ entry_cookie_name }}" id="input-cookie-name" class="form-control"/>
+										<span class="input-group-btn">
+											<button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-input-id="input-cookie-name" title="{{ btn_generate_cookie_name }}"><i class="fa-solid fa-rotate-right"></i></button>
+										</span>
+									</div>
+									<div id="error-cookie-name" class="invalid-feedback"></div>
+									<div class="form-text">{{ help_cookie_name }}</div>
+								</div>
+							</div>
+
 							<ul class="nav nav-tabs">
                 {% for language in languages %}
                   <li class="nav-item"><a href="#language-{{ language.language_id }}" data-bs-toggle="tab" class="nav-link{% if loop.first %} active{% endif %}"><img src="{{ language.image }}" title="{{ language.name }}"/> {{ language.name }}</a></li>
@@ -230,6 +244,30 @@
 				var trigger = $(this).val();
 				$('#group-page-load-delay').toggle(trigger === 'page_load');
 				$('#group-scroll-threshold').toggle(trigger === 'scroll');
+		});
+
+		$('button[data-input-id]').on('click', function () {
+			var node = $(this);
+			var target = $('#' + node.data('input-id'));
+
+			$.ajax({
+				url: 'index.php?route=extension/ps_popup_dialog_box/module/ps_popup_dialog_box{{ oc4_separator }}generate_cookie_name&user_token={{ user_token }}',
+				dataType: 'json',
+				beforeSend: function () {
+					target.prop('disabled', true);
+					$(node).button('loading');
+				},
+				complete: function () {
+					$(node).button('reset');
+				},
+				success: function (json) {
+					target.val(json['cookie_name']).prop('disabled', false);
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+					target.prop('disabled', false);
+					console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				}
+			});
 		});
 	</script>
 </div>

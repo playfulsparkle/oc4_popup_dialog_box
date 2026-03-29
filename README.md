@@ -1,19 +1,19 @@
 # Playful Sparkle - Popup Dialog Box for OpenCart 4
 
-The **Playful Sparkle - Popup Dialog Box** extension for OpenCart 4.x+ allows store owners to easily display fully customizable popup dialogs on their storefront. Designed to boost engagement and conversions, it gives you complete control over when, where, and how the popup appears – perfect for promotions, announcements, or any message you want to highlight. The module integrates directly into OpenCart layouts and provides a flexible configuration interface without requiring any coding knowledge.
+The **Playful Sparkle - Popup Dialog Box** extension for OpenCart 4.x+ allows store owners to easily display fully customizable popup dialogs on their storefront. Designed to boost engagement and conversions, it gives you complete control over when, where, and how the popup appears - perfect for promotions, announcements, or any message you want to highlight. The module integrates directly into OpenCart layouts and provides a flexible configuration interface without requiring any coding knowledge.
 
 ## Features
 
-- **Flexible trigger system**: Choose when the popup appears – on page load, when the user intends to leave (exit intent), or after scrolling a defined distance.
-- **Precise positioning**: Place the popup exactly where you want – top (left, center, right), center (left, center, right), or bottom (left, center, right).
+- **Flexible trigger system**: Choose when the popup appears - on page load, when the user intends to leave (exit intent), or after scrolling a defined distance.
+- **Precise positioning**: Place the popup exactly where you want - top (left, center, right), center (left, center, right), or bottom (left, center, right).
 - **Custom content editor**: Built‑in WYSIWYG editor with multi‑language support, allowing rich text, images, and HTML content.
-- **Full appearance control**: Customise background image, background colour, backdrop colour & opacity, box shadow colour & opacity, and border radius – all from the admin panel.
-- **Animation control**: Choose entrance and exit animations independently – fade, zoom, or slide – for a smooth, professional user experience.
+- **Full appearance control**: Customise background image, background colour, backdrop colour & opacity, box shadow colour & opacity, and border radius - all from the admin panel.
+- **Animation control**: Choose entrance and exit animations independently - fade, zoom, or slide - for a smooth, professional user experience.
 - **Display behaviour settings**: Set a delay for page‑load popups, define a scroll distance threshold, and decide how long to remember dismissed popups (next page load, 1 day, 1 week, 1 month, or 1 year).
 - **User interaction control**: Option to close the popup by clicking outside the dialog box, improving usability.
 - **Size configuration**: Set custom width and height to fit any content or design requirement.
 - **Layout integration**: Easily assign the module to any layout (home, product, category, checkout, etc.) and enable/disable it per store.
-- **No coding required**: All options are managed through OpenCart’s intuitive admin interface – just install, configure, and enjoy.
+- **No coding required**: All options are managed through OpenCart’s intuitive admin interface - just install, configure, and enjoy.
 - **Compatibility**: Integrates smoothly with OpenCart 4.x+, supporting a range of online store setups.
 - **Multilingual Support**: Ready for international use with languages including العربية (ar), Български (bg), 中文(简体) (zh-cn), 中文(繁體) (zh-tw), Čeština (cs-cz), English (UK) (en-gb), English (US) (en-us), Français (fr-fr), Deutsch (de-de), Ελληνικά (el-gr), Magyar (hu-hu), Italiano (it-it), 日本語 (ja), 한국어 (ko-kr), Polski (pl-pl), Português (Brasil) (pt-br), Русский (ru-ru), Slovenčina (sk-sk), Español (es-es), and Türkçe (tr-tr).
 

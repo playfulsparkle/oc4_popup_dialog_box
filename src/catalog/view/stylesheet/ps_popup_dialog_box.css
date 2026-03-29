@@ -105,7 +105,7 @@
 }
 
 /* ------------------------------------------------------------------
-   FADE animations (opacity only – same for all positions)
+   FADE animations (opacity only - same for all positions)
    ------------------------------------------------------------------ */
 @keyframes fadeInTopLeft { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeOutTopLeft { from { opacity: 1; } to { opacity: 0; } }
@@ -228,7 +228,7 @@
 }
 
 /* ------------------------------------------------------------------
-   SLIDE animations – always from top to final position, reverse out
+   SLIDE animations - always from top to final position, reverse out
    (preserve horizontal alignment)
    ------------------------------------------------------------------ */
 
