@@ -1,0 +1,9 @@
+{
+  "name": "Playful Sparkle - Popup Dialog Box",
+  "description": "Easily add customizable popup dialogs to your storefront for promotions and announcements, enhancing user engagement without technical setup.",
+  "code": "ps_popup_dialog_box",
+  "license": "GPL",
+  "version": "1.0.0",
+  "author": "Playful Sparkle",
+  "link": "https://github.com/playfulsparkle/oc4_popup_dialog_box.git"
+}

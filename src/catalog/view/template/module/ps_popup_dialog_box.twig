@@ -1,0 +1,34 @@
+<dialog
+	id="ps-popup-dialog-box{{ module }}"
+	class="ps-popup-dialog {{ position }}"
+	style="--width: {{ width | escape('html_attr') }}px;
+               --height: {{ height | escape('html_attr') }}px;
+               --bg-color: {{ bg_color | escape('html_attr') }};
+							 --bg-image: {% if bg_image %}url('{{ bg_image | escape('html_attr') }}'){% else %}none{% endif %};
+               --box-shadow-color: {{ box_shadow_color | escape('html_attr') }};
+               --box-shadow-opacity: {{ box_shadow_opacity | escape('html_attr') }};
+               --backdrop-color: {{ backdrop_color | escape('html_attr') }};
+               --backdrop-opacity: {{ backdrop_opacity | escape('html_attr') }};
+							 --backdrop-cursor: {% if close_overlay_click %}pointer{% else %}default{% endif %};
+               --border-radius: {{ border_radius | escape('html_attr') }}px;
+							 --animation_in: {{ animation_in | escape('html_attr') }};
+							 --animation_out: {{ animation_out | escape('html_attr') }};"
+			{% if trigger=='page_load' %}data-page-load-delay="{{ page_load_delay | escape('html_attr') }}"
+			{% elseif trigger=='scroll' %}data-scroll-threshold="{{ scroll_threshold | escape('html_attr') }}" {% endif %}
+			data-trigger="{{ trigger | escape('html_attr') }}"
+			data-close-overlay-click="{{ close_overlay_click | escape('html_attr') }}"
+		>
+	<form class="dialog-body" method="dialog">
+		<button class="dialog-btn-close" type="submit" value="close">
+			<i class="fa-solid fa-xmark"></i>
+		</button>
+		<div>{{ content | raw }}</div>
+	</form>
+</dialog>
+<script>
+	PopupDialog.init({
+		dialogId: 'ps-popup-dialog-box{{ module }}',
+		cookieName: 'ps_popup_discarded_{{ module }}',
+		cookieDays: {{ close_behavior }}
+	});
+</script>

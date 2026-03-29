@@ -1,0 +1,236 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="float-end">
+        <button type="submit" form="form-module" data-bs-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa-solid fa-save"></i></button>
+        <a href="{{ back }}" data-bs-toggle="tooltip" title="{{ button_back }}" class="btn btn-light"><i class="fa-solid fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ol class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+          <li class="breadcrumb-item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+  <div class="container-fluid">
+		<div class="alert alert-info"><i class="fa-solid fa-info-circle"></i> {{ text_layout }}</div>
+    <div class="card">
+      <div class="card-header"><i class="fa-solid fa-pencil"></i> {{ text_edit }}</div>
+      <div class="card-body">
+        <form id="form-module" action="{{ save }}" method="post" data-oc-toggle="ajax">
+
+					<ul class="nav nav-tabs">
+						<li class="nav-item"><a href="#tab-general" data-bs-toggle="tab" class="nav-link active">{{ tab_general }}</a></li>
+						<li class="nav-item"><a href="#tab-support" data-bs-toggle="tab" class="nav-link">{{ tab_help_and_support }}</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="tab-general" class="tab-pane active">
+
+							<div class="row mb-3 required">
+								<label for="input-name" class="col-sm-2 col-form-label">{{ entry_name }}</label>
+								<div class="col-sm-10">
+									<input type="text" name="name" value="{{ name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control"/>
+									<div id="error-name" class="invalid-feedback"></div>
+								</div>
+							</div>
+
+							<ul class="nav nav-tabs">
+                {% for language in languages %}
+                  <li class="nav-item"><a href="#language-{{ language.language_id }}" data-bs-toggle="tab" class="nav-link{% if loop.first %} active{% endif %}"><img src="{{ language.image }}" title="{{ language.name }}"/> {{ language.name }}</a></li>
+                {% endfor %}
+              </ul>
+              <div class="tab-content">
+                {% for language in languages %}
+                  <div id="language-{{ language.language_id }}" class="tab-pane{% if loop.first %} active{% endif %}">
+
+										<div class="row mb-3 required">
+                      <label for="input-content-{{ language.language_id }}" class="col-sm-2 col-form-label">{{ entry_content }}</label>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <div class="form-control h-100 p-0 border-0 rounded-0">
+                            <textarea name="content[{{ language.language_id }}]" placeholder="{{ entry_content }}" id="input-content-{{ language.language_id }}" data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">{{ content[language.language_id] ? content[language.language_id] }}</textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+										<div class="row mb-3">
+											<label class="col-sm-2 col-form-label">{{ entry_background_image }}</label>
+											<div class="col-sm-10">
+												<div class="border rounded d-block" style="max-width: 300px;">
+													<img src="{{ bg_image[language.language_id] ? bg_image[language.language_id].thumb }}" alt="" title="" id="thumb-image{{ language.language_id }}" data-oc-placeholder="{{ placeholder }}" class="img-fluid"/>
+													<input type="hidden" name="bg_image[{{ language.language_id }}][image]" value="{{ bg_image[language.language_id] ? bg_image[language.language_id].image }}" id="input-image{{ language.language_id }}"/>
+													<div class="d-grid">
+														<button type="button" data-oc-toggle="image" data-oc-target="#input-image{{ language.language_id }}" data-oc-thumb="#thumb-image{{ language.language_id }}" class="btn btn-primary rounded-0"><i class="fa-solid fa-pencil"></i> {{ button_edit }}</button>
+														<button type="button" data-oc-toggle="clear" data-oc-target="#input-image{{ language.language_id }}" data-oc-thumb="#thumb-image{{ language.language_id }}" class="btn btn-warning rounded-0"><i class="fa-regular fa-trash-can"></i> {{ button_clear }}</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								{% endfor %}
+							</div>
+
+							<div class="row mb-3">
+								<label for="input-background-color" class="col-sm-2 col-form-label">{{ entry_background_color }}</label>
+								<div class="col-sm-10">
+									<input type="color" name="bg_color" value="{{ bg_color }}" placeholder="{{ entry_background_color }}" id="input-background-color"/>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-box-shadow-color" class="col-sm-2 col-form-label">{{ entry_box_shadow_color }}</label>
+								<div class="col-sm-10">
+									<input type="color" name="box_shadow_color" value="{{ box_shadow_color }}" placeholder="{{ entry_box_shadow_color }}" id="input-box-shadow-color"/>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-box-shadow-opacity" class="col-sm-2 col-form-label">{{ entry_box_shadow_opacity }}</label>
+								<div class="col-sm-10">
+									<input type="number" min="0" max="1" step="0.1" name="box_shadow_opacity" value="{{ box_shadow_opacity }}" placeholder="{{ entry_box_shadow_opacity }}" id="input-box-shadow-opacity" class="form-control"/>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-backdrop-color" class="col-sm-2 col-form-label">{{ entry_backdrop_color }}</label>
+								<div class="col-sm-10">
+									<input type="color" name="backdrop_color" value="{{ backdrop_color }}" placeholder="{{ entry_backdrop_color }}" id="input-backdrop-color"/>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-backdrop-opacity" class="col-sm-2 col-form-label">{{ entry_backdrop_opacity }}</label>
+								<div class="col-sm-10">
+									<input type="number" min="0" max="1" step="0.1" name="backdrop_opacity" value="{{ backdrop_opacity }}" placeholder="{{ entry_backdrop_opacity }}" id="input-backdrop-opacity" class="form-control"/>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-border-radius" class="col-sm-2 col-form-label">{{ entry_border_radius }}</label>
+								<div class="col-sm-10">
+									<input type="number" min="0" max="100" name="border_radius" value="{{ border_radius }}" placeholder="{{ entry_border_radius }}" id="input-border-radius" class="form-control"/>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-close-heavior" class="col-sm-2 col-form-label">{{ entry_close_behavior }}</label>
+								<div class="col-sm-10">
+									<select name="close_behavior" id="input-close-heavior" class="form-select">
+										{% for key, value in close_behaviors %}
+											<option value="{{ key }}"{% if key == close_behavior %} selected{% endif %}>{{ value }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label class="col-sm-2 col-form-label" for="input-close-overlay-click">{{ entry_close_overlay_click }}</label>
+								<div class="col-sm-10">
+									<div class="form-check form-switch form-switch-lg">
+										<input type="hidden" name="close_overlay_click" value="0"/>
+										<input type="checkbox" name="close_overlay_click" value="1" id="input-close-overlay-click" class="form-check-input"{% if close_overlay_click %} checked{% endif %}/>
+									</div>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-animation-in" class="col-sm-2 col-form-label">{{ entry_animation_in }}</label>
+								<div class="col-sm-10">
+									<select name="animation_in" id="input-animation-in" class="form-select">
+										{% for key, value in animations_in %}
+											<option value="{{ key }}"{% if key == animation_in %} selected{% endif %}>{{ value }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-animation-out" class="col-sm-2 col-form-label">{{ entry_animation_out }}</label>
+								<div class="col-sm-10">
+									<select name="animation_out" id="input-animation-out" class="form-select">
+										{% for key, value in animations_out %}
+											<option value="{{ key }}"{% if key == animation_out %} selected{% endif %}>{{ value }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-position" class="col-sm-2 col-form-label">{{ entry_position }}</label>
+								<div class="col-sm-10">
+									<select name="position" id="input-position" class="form-select">
+										{% for key, value in positions %}
+											<option value="{{ key }}"{% if key == position %} selected{% endif %}>{{ value }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for="input-trigger" class="col-sm-2 col-form-label">{{ entry_trigger }}</label>
+								<div class="col-sm-10">
+									<select name="trigger" id="input-trigger" class="form-select">
+										{% for key, value in triggers %}
+											<option value="{{ key }}"{% if key == trigger %} selected{% endif %}>{{ value }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							<div id="group-page-load-delay" class="row mb-3 required"{% if trigger != 'page_load' %}style="display: none;"{% endif %}>
+								<label for="input-page-load-delay" class="col-sm-2 col-form-label">{{ entry_page_load_delay }}</label>
+								<div class="col-sm-10">
+									<input type="text" name="page_load_delay" value="{{ page_load_delay }}" placeholder="{{ entry_page_load_delay }}" id="input-page-load-delay" class="form-control"/>
+									<div id="error-page-load-delay" class="invalid-feedback"></div>
+								</div>
+							</div>
+							<div id="group-scroll-threshold" class="row mb-3 required"{% if trigger != 'scroll' %}style="display: none;"{% endif %}>
+								<label for="input-scroll-threshold" class="col-sm-2 col-form-label">{{ entry_scroll_threshold }}</label>
+								<div class="col-sm-10">
+									<input type="text" name="scroll_threshold" value="{{ scroll_threshold }}" placeholder="{{ entry_scroll_threshold }}" id="input-scroll-threshold" class="form-control"/>
+									<div id="error-scroll-threshold" class="invalid-feedback"></div>
+								</div>
+							</div>
+							<div class="row mb-3 required">
+								<label for="input-width" class="col-sm-2 col-form-label">{{ entry_width }}</label>
+								<div class="col-sm-10">
+									<input type="text" name="width" value="{{ width }}" placeholder="{{ entry_width }}" id="input-width" class="form-control"/>
+									<div id="error-width" class="invalid-feedback"></div>
+								</div>
+							</div>
+							<div class="row mb-3 required">
+								<label for="input-height" class="col-sm-2 col-form-label">{{ entry_height }}</label>
+								<div class="col-sm-10">
+									<input type="text" name="height" value="{{ height }}" placeholder="{{ entry_height }}" id="input-height" class="form-control"/>
+									<div id="error-height" class="invalid-feedback"></div>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label class="col-sm-2 col-form-label" for="input-status">{{ entry_status }}</label>
+								<div class="col-sm-10">
+									<div class="form-check form-switch form-switch-lg">
+										<input type="hidden" name="status" value="0"/>
+										<input type="checkbox" name="status" value="1" id="input-status" class="form-check-input"{% if status %} checked{% endif %}/>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div id="tab-support" class="tab-pane">
+
+							<h3>{{ heading_contact }}</h3>
+							{{ text_contact }}
+
+						</div>
+					</div>
+
+          <input type="hidden" name="module_id" value="{{ module_id }}" id="input-module-id"/>
+        </form>
+      </div>
+    </div>
+  </div>
+	<script>
+		$('textarea[data-oc-toggle=\'ckeditor\']').ckeditor({
+    	language: '{{ ckeditor }}'
+		});
+
+		$('#input-trigger').on('change', function() {
+				var trigger = $(this).val();
+				$('#group-page-load-delay').toggle(trigger === 'page_load');
+				$('#group-scroll-threshold').toggle(trigger === 'scroll');
+		});
+	</script>
+</div>
+{{ footer }}
