@@ -34,7 +34,7 @@ var PopupDialog = (function () {
 
         var dialog = document.getElementById(dialogId);
         if (!dialog) return;
-        if (getCookie(cookieName)) return;
+        if (cookieDays > 0 && getCookie(cookieName)) return;
 
         var trigger = dialog.getAttribute('data-trigger');
         var close_overlay_click = dialog.getAttribute('data-close-overlay-click') == '1';
@@ -73,7 +73,7 @@ var PopupDialog = (function () {
         // ── Triggers ─────────────────────────────────────────────────
         if (trigger === 'page_load') {
             setTimeout(function () {
-                if (!getCookie(cookieName)) openDialogWithAnimation();
+                if (cookieDays === 0 || !getCookie(cookieName)) openDialogWithAnimation();
             }, pageLoadDelay);
         }
         else if (trigger === 'exit_intent') {
