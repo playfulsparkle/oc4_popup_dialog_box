@@ -41,8 +41,19 @@ var PopupDialog = (function () {
         var pageLoadDelay = parseInt(dialog.getAttribute('data-page-load-delay'), 10) || 0;
         var scrollThreshold = parseInt(dialog.getAttribute('data-scroll-threshold'), 10) || 0;
         var closing = false;
+        var navigateTo = null;
+        var links = dialog.querySelectorAll('a[href]');
+
+        links.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                navigateTo = link.getAttribute('href');
+                closeDialogWithAnimation();
+            });
+        });
 
         function openDialogWithAnimation() {
+            navigateTo = null;
             dialog.showModal();
             dialog.offsetHeight; // force reflow
             dialog.classList.add('in');
@@ -53,6 +64,9 @@ var PopupDialog = (function () {
             dialog.close();
             if (cookieDays > 0) setCookie(cookieName, '1', cookieDays);
             closing = false;
+            if (navigateTo) {
+                window.location = navigateTo;
+            }
         }
 
         function closeDialogWithAnimation() {
