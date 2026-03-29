@@ -1,7 +1,17 @@
+.ps-sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .ps-popup-dialog {
     --distance: 16px;
     position: fixed;
     margin: 0;
+    padding: 0;
     max-width: none;
     max-height: none;
     border: 0;
@@ -33,16 +43,25 @@
 
 .dialog-body {
     position: relative;
+    height: 100%;
+}
+
+.dialog-primary-link {
+    position: absolute;
+    display: block;
+    inset: 0 0 0 0;
 }
 
 .dialog-btn-close {
     position: absolute;
-    right: 0;
-    top: -5px;
+    right: var(--distance);
+    top: var(--distance);
     border: none;
     background-color: #ffffff;
     width: 32px;
     height: 32px;
+    border-radius: 3px;
+    z-index: 8;
 }
 
 .ps-popup-dialog.top-left {
@@ -107,124 +126,556 @@
 /* ------------------------------------------------------------------
    FADE animations (opacity only - same for all positions)
    ------------------------------------------------------------------ */
-@keyframes fadeInTopLeft { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutTopLeft { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeInTopLeft {
+    from {
+        opacity: 0;
+    }
 
-@keyframes fadeInTopCenter { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutTopCenter { from { opacity: 1; } to { opacity: 0; } }
+    to {
+        opacity: 1;
+    }
+}
 
-@keyframes fadeInTopRight { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutTopRight { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeOutTopLeft {
+    from {
+        opacity: 1;
+    }
 
-@keyframes fadeInCenterLeft { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutCenterLeft { from { opacity: 1; } to { opacity: 0; } }
+    to {
+        opacity: 0;
+    }
+}
 
-@keyframes fadeInCenterCenter { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutCenterCenter { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeInTopCenter {
+    from {
+        opacity: 0;
+    }
 
-@keyframes fadeInCenterRight { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutCenterRight { from { opacity: 1; } to { opacity: 0; } }
+    to {
+        opacity: 1;
+    }
+}
 
-@keyframes fadeInBottomLeft { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutBottomLeft { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeOutTopCenter {
+    from {
+        opacity: 1;
+    }
 
-@keyframes fadeInBottomCenter { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutBottomCenter { from { opacity: 1; } to { opacity: 0; } }
+    to {
+        opacity: 0;
+    }
+}
 
-@keyframes fadeInBottomRight { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeOutBottomRight { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeInTopRight {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutTopRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInCenterLeft {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutCenterLeft {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInCenterCenter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutCenterCenter {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInCenterRight {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutCenterRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInBottomLeft {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutBottomLeft {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInBottomCenter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutBottomCenter {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInBottomRight {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutBottomRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
 
 /* ------------------------------------------------------------------
    ZOOM animations (scale + position‑specific transforms)
    ------------------------------------------------------------------ */
 /* top-left */
 @keyframes zoomInTopLeft {
-    from { opacity: 0; transform: scale(0.8); top: var(--distance); left: var(--distance); right: auto; bottom: auto; }
-    to   { opacity: 1; transform: scale(1); top: var(--distance); left: var(--distance); right: auto; bottom: auto; }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        top: var(--distance);
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        top: var(--distance);
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
 }
+
 @keyframes zoomOutTopLeft {
-    from { opacity: 1; transform: scale(1); top: var(--distance); left: var(--distance); right: auto; bottom: auto; }
-    to   { opacity: 0; transform: scale(0.8); top: var(--distance); left: var(--distance); right: auto; bottom: auto; }
+    from {
+        opacity: 1;
+        transform: scale(1);
+        top: var(--distance);
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+        top: var(--distance);
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
 }
 
 /* top-center */
 @keyframes zoomInTopCenter {
-    from { opacity: 0; transform: translateX(-50%) scale(0.8); top: var(--distance); left: 50%; right: auto; bottom: auto; }
-    to   { opacity: 1; transform: translateX(-50%) scale(1); top: var(--distance); left: 50%; right: auto; bottom: auto; }
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+        top: var(--distance);
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        top: var(--distance);
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
 }
+
 @keyframes zoomOutTopCenter {
-    from { opacity: 1; transform: translateX(-50%) scale(1); top: var(--distance); left: 50%; right: auto; bottom: auto; }
-    to   { opacity: 0; transform: translateX(-50%) scale(0.8); top: var(--distance); left: 50%; right: auto; bottom: auto; }
+    from {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        top: var(--distance);
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+        top: var(--distance);
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
 }
 
 /* top-right */
 @keyframes zoomInTopRight {
-    from { opacity: 0; transform: scale(0.8); top: var(--distance); right: var(--distance); left: auto; bottom: auto; }
-    to   { opacity: 1; transform: scale(1); top: var(--distance); right: var(--distance); left: auto; bottom: auto; }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        top: var(--distance);
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        top: var(--distance);
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
 }
+
 @keyframes zoomOutTopRight {
-    from { opacity: 1; transform: scale(1); top: var(--distance); right: var(--distance); left: auto; bottom: auto; }
-    to   { opacity: 0; transform: scale(0.8); top: var(--distance); right: var(--distance); left: auto; bottom: auto; }
+    from {
+        opacity: 1;
+        transform: scale(1);
+        top: var(--distance);
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+        top: var(--distance);
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
 }
 
 /* center-left */
 @keyframes zoomInCenterLeft {
-    from { opacity: 0; transform: scale(0.8) translateY(-50%); top: 50%; left: var(--distance); right: auto; bottom: auto; }
-    to   { opacity: 1; transform: scale(1) translateY(-50%); top: 50%; left: var(--distance); right: auto; bottom: auto; }
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-50%);
+        top: 50%;
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(-50%);
+        top: 50%;
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
 }
+
 @keyframes zoomOutCenterLeft {
-    from { opacity: 1; transform: scale(1) translateY(-50%); top: 50%; left: var(--distance); right: auto; bottom: auto; }
-    to   { opacity: 0; transform: scale(0.8) translateY(-50%); top: 50%; left: var(--distance); right: auto; bottom: auto; }
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(-50%);
+        top: 50%;
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8) translateY(-50%);
+        top: 50%;
+        left: var(--distance);
+        right: auto;
+        bottom: auto;
+    }
 }
 
 /* center-center */
 @keyframes zoomInCenterCenter {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); top: 50%; left: 50%; right: auto; bottom: auto; }
-    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); top: 50%; left: 50%; right: auto; bottom: auto; }
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
 }
+
 @keyframes zoomOutCenterCenter {
-    from { opacity: 1; transform: translate(-50%, -50%) scale(1); top: 50%; left: 50%; right: auto; bottom: auto; }
-    to   { opacity: 0; transform: translate(-50%, -50%) scale(0.8); top: 50%; left: 50%; right: auto; bottom: auto; }
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+    }
 }
 
 /* center-right */
 @keyframes zoomInCenterRight {
-    from { opacity: 0; transform: scale(0.8) translateY(-50%); top: 50%; right: var(--distance); left: auto; bottom: auto; }
-    to   { opacity: 1; transform: scale(1) translateY(-50%); top: 50%; right: var(--distance); left: auto; bottom: auto; }
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-50%);
+        top: 50%;
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(-50%);
+        top: 50%;
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
 }
+
 @keyframes zoomOutCenterRight {
-    from { opacity: 1; transform: scale(1) translateY(-50%); top: 50%; right: var(--distance); left: auto; bottom: auto; }
-    to   { opacity: 0; transform: scale(0.8) translateY(-50%); top: 50%; right: var(--distance); left: auto; bottom: auto; }
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(-50%);
+        top: 50%;
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8) translateY(-50%);
+        top: 50%;
+        right: var(--distance);
+        left: auto;
+        bottom: auto;
+    }
 }
 
 /* bottom-left */
 @keyframes zoomInBottomLeft {
-    from { opacity: 0; transform: scale(0.8); bottom: var(--distance); left: var(--distance); top: auto; right: auto; }
-    to   { opacity: 1; transform: scale(1); bottom: var(--distance); left: var(--distance); top: auto; right: auto; }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        bottom: var(--distance);
+        left: var(--distance);
+        top: auto;
+        right: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        bottom: var(--distance);
+        left: var(--distance);
+        top: auto;
+        right: auto;
+    }
 }
+
 @keyframes zoomOutBottomLeft {
-    from { opacity: 1; transform: scale(1); bottom: var(--distance); left: var(--distance); top: auto; right: auto; }
-    to   { opacity: 0; transform: scale(0.8); bottom: var(--distance); left: var(--distance); top: auto; right: auto; }
+    from {
+        opacity: 1;
+        transform: scale(1);
+        bottom: var(--distance);
+        left: var(--distance);
+        top: auto;
+        right: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+        bottom: var(--distance);
+        left: var(--distance);
+        top: auto;
+        right: auto;
+    }
 }
 
 /* bottom-center */
 @keyframes zoomInBottomCenter {
-    from { opacity: 0; transform: translateX(-50%) scale(0.8); bottom: var(--distance); left: 50%; top: auto; right: auto; }
-    to   { opacity: 1; transform: translateX(-50%) scale(1); bottom: var(--distance); left: 50%; top: auto; right: auto; }
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+        bottom: var(--distance);
+        left: 50%;
+        top: auto;
+        right: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        bottom: var(--distance);
+        left: 50%;
+        top: auto;
+        right: auto;
+    }
 }
+
 @keyframes zoomOutBottomCenter {
-    from { opacity: 1; transform: translateX(-50%) scale(1); bottom: var(--distance); left: 50%; top: auto; right: auto; }
-    to   { opacity: 0; transform: translateX(-50%) scale(0.8); bottom: var(--distance); left: 50%; top: auto; right: auto; }
+    from {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        bottom: var(--distance);
+        left: 50%;
+        top: auto;
+        right: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+        bottom: var(--distance);
+        left: 50%;
+        top: auto;
+        right: auto;
+    }
 }
 
 /* bottom-right */
 @keyframes zoomInBottomRight {
-    from { opacity: 0; transform: scale(0.8); bottom: var(--distance); right: var(--distance); left: auto; top: auto; }
-    to   { opacity: 1; transform: scale(1); bottom: var(--distance); right: var(--distance); left: auto; top: auto; }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        bottom: var(--distance);
+        right: var(--distance);
+        left: auto;
+        top: auto;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        bottom: var(--distance);
+        right: var(--distance);
+        left: auto;
+        top: auto;
+    }
 }
+
 @keyframes zoomOutBottomRight {
-    from { opacity: 1; transform: scale(1); bottom: var(--distance); right: var(--distance); left: auto; top: auto; }
-    to   { opacity: 0; transform: scale(0.8); bottom: var(--distance); right: var(--distance); left: auto; top: auto; }
+    from {
+        opacity: 1;
+        transform: scale(1);
+        bottom: var(--distance);
+        right: var(--distance);
+        left: auto;
+        top: auto;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+        bottom: var(--distance);
+        right: var(--distance);
+        left: auto;
+        top: auto;
+    }
 }
 
 /* ------------------------------------------------------------------
@@ -242,6 +693,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -251,6 +703,7 @@
         bottom: auto;
     }
 }
+
 @keyframes slideOutTopLeft {
     from {
         opacity: 1;
@@ -260,6 +713,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 0;
         transform: translateY(-100%);
@@ -280,6 +734,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
@@ -289,6 +744,7 @@
         bottom: auto;
     }
 }
+
 @keyframes slideOutTopCenter {
     from {
         opacity: 1;
@@ -298,6 +754,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 0;
         transform: translateX(-50%) translateY(-100%);
@@ -318,6 +775,7 @@
         left: auto;
         bottom: auto;
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -327,6 +785,7 @@
         bottom: auto;
     }
 }
+
 @keyframes slideOutTopRight {
     from {
         opacity: 1;
@@ -336,6 +795,7 @@
         left: auto;
         bottom: auto;
     }
+
     to {
         opacity: 0;
         transform: translateY(-100%);
@@ -356,6 +816,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 1;
         transform: translateY(-50%);
@@ -365,6 +826,7 @@
         bottom: auto;
     }
 }
+
 @keyframes slideOutCenterLeft {
     from {
         opacity: 1;
@@ -374,6 +836,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 0;
         transform: translateY(-100%);
@@ -394,6 +857,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, -50%);
@@ -403,6 +867,7 @@
         bottom: auto;
     }
 }
+
 @keyframes slideOutCenterCenter {
     from {
         opacity: 1;
@@ -412,6 +877,7 @@
         right: auto;
         bottom: auto;
     }
+
     to {
         opacity: 0;
         transform: translate(-50%, -100%);
@@ -432,6 +898,7 @@
         left: auto;
         bottom: auto;
     }
+
     to {
         opacity: 1;
         transform: translateY(-50%);
@@ -441,6 +908,7 @@
         bottom: auto;
     }
 }
+
 @keyframes slideOutCenterRight {
     from {
         opacity: 1;
@@ -450,6 +918,7 @@
         left: auto;
         bottom: auto;
     }
+
     to {
         opacity: 0;
         transform: translateY(-100%);
@@ -470,6 +939,7 @@
         top: auto;
         right: auto;
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -479,6 +949,7 @@
         right: auto;
     }
 }
+
 @keyframes slideOutBottomLeft {
     from {
         opacity: 1;
@@ -488,6 +959,7 @@
         top: auto;
         right: auto;
     }
+
     to {
         opacity: 0;
         transform: translateY(-100%);
@@ -508,6 +980,7 @@
         top: auto;
         right: auto;
     }
+
     to {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
@@ -517,6 +990,7 @@
         right: auto;
     }
 }
+
 @keyframes slideOutBottomCenter {
     from {
         opacity: 1;
@@ -526,6 +1000,7 @@
         top: auto;
         right: auto;
     }
+
     to {
         opacity: 0;
         transform: translateX(-50%) translateY(-100%);
@@ -546,6 +1021,7 @@
         left: auto;
         top: auto;
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -555,6 +1031,7 @@
         top: auto;
     }
 }
+
 @keyframes slideOutBottomRight {
     from {
         opacity: 1;
@@ -564,6 +1041,7 @@
         left: auto;
         top: auto;
     }
+
     to {
         opacity: 0;
         transform: translateY(-100%);

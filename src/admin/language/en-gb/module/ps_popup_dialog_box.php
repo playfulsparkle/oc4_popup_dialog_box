@@ -39,6 +39,7 @@ $_['entry_name']                = 'Module Name';
 $_['entry_position']            = 'Position';
 $_['entry_trigger']             = 'Trigger';
 $_['entry_content']             = 'Content';
+$_['entry_content_url']         = 'Content URL';
 $_['entry_cookie_name']         = 'Cookie Name';
 $_['entry_background_image']    = 'Background image';
 $_['entry_background_color']    = 'Background color';

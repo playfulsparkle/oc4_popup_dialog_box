@@ -22,7 +22,13 @@
 		<button class="dialog-btn-close" type="submit" value="close" aria-label="{{ btn_close_popup | escape('html_attr') }}">
 			<i class="fa-solid fa-xmark"></i>
 		</button>
-		<div>{{ content | raw }}</div>
+		{% if content_url %}
+			<a class="dialog-primary-link" href="{{ content_url | escape('html_attr') }}">
+				<span class="ps-sr-only">{{ content | escape('html_attr') }}</span>
+			</a>
+		{% else %}
+			{{ content | raw }}
+		{% endif %}
 	</form>
 </dialog>
 <script>

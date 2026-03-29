@@ -89,6 +89,12 @@ class PsPopupDialogBox extends \Opencart\System\Engine\Controller
             $data['content'] = [];
         }
 
+        if (isset($module_info['content_url'])) {
+            $data['content_url'] = (array) $module_info['content_url'];
+        } else {
+            $data['content_url'] = [];
+        }
+
         if (isset($module_info['cookie_name'])) {
             $data['cookie_name'] = $module_info['cookie_name'];
         } else {
