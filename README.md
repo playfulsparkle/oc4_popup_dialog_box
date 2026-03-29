@@ -26,8 +26,8 @@ The **Playful Sparkle - Popup Dialog Box** extension for OpenCart 4.x+ allows st
 3. Navigate to `Extensions > Installer`.
 4. Click the `Upload` button and upload the `ps_popup_dialog_box.ocmod.zip` file.
 5. Locate the extension in the `Installed Extensions` list and click the `Install` button.
-6. Navigate to `Extensions > Extensions` and select `Order Totals` from the `Choose the extension type` dropdown list.
-7. Locate the extension in the `Order Totals` list and click the `Install` button.
+6. Navigate to `Extensions > Extensions` and select `Modules` from the `Choose the extension type` dropdown list.
+7. Locate the extension in the `Modules` list and click the `Install` button.
 8. Click the `Edit` button, configure the extension parameters, and click the `Save` button to save your settings.
 
 ---
