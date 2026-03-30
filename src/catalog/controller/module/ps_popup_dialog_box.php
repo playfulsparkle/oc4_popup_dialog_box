@@ -32,7 +32,7 @@ class PsPopupDialogBox extends \Opencart\System\Engine\Controller
         $data['content'] = isset($setting['content'][$language_id]) ? html_entity_decode($setting['content'][$language_id], ENT_QUOTES, 'UTF-8') : '';
 
         if ($data['content_url']) {
-            $data['content'] = strip_tags($data['content']);
+            $data['content'] = $this->normalizeContent($data['content']);
         }
 
         $data['bg_image'] = isset($setting['bg_image'][$language_id]['image']) && $setting['bg_image'][$language_id]['image'] ? $this->config->get('config_url') . 'image/' . html_entity_decode($setting['bg_image'][$language_id]['image'], ENT_QUOTES, 'UTF-8') : '';
@@ -76,6 +76,23 @@ class PsPopupDialogBox extends \Opencart\System\Engine\Controller
         return $this->load->view('extension/ps_popup_dialog_box/module/ps_popup_dialog_box', $data);
     }
 
+    /**
+     * Returns the number of days corresponding to a cookie behavior string.
+     *
+     * This method maps predefined behavior strings to their respective cookie
+     * lifetimes in days. It is used to determine how long a cookie should persist
+     * based on user preference or configuration.
+     *
+     * @param string $behavior The behavior identifier. Acceptable values:
+     *                         - 'immediately' → 0 days (session cookie)
+     *                         - 'day' → 1 day
+     *                         - 'week' → 7 days
+     *                         - 'month' → 30 days
+     *                         - 'year' → 365 days
+     *                         Any other value defaults to 30 days.
+     *
+     * @return int The number of days the cookie should live.
+     */
     private function getCookieDays(string $behavior): int
     {
         switch ($behavior) {
@@ -94,22 +111,69 @@ class PsPopupDialogBox extends \Opencart\System\Engine\Controller
         }
     }
 
-    private function hexToRgb(string $hex): string
+    /**
+     * Converts a hexadecimal color code to a comma-separated RGB string.
+     *
+     * Supports the following formats:
+     * - 3-digit: #fff or fff
+     * - 6-digit: #ff0000 or ff0000
+     * - 8-digit: #ff00007f or ff00007f (alpha channel is ignored)
+     *
+     * For invalid inputs, it returns "0, 0, 0" as a fallback.
+     *
+     * @param string $color The hexadecimal color code.
+     *
+     * @return string The RGB values in the format "r, g, b".
+     */
+    private function hexToRgb(string $color): string
     {
-        // Remove # if present
-        $hex = ltrim($hex, '#');
+        // Remove leading '#' if present
+        $hex = ltrim($color, '#');
 
-        // If shorthand (e.g., #000) expand to full
-        if (strlen($hex) == 3) {
-            $r = hexdec(str_repeat(substr($hex, 0, 1), 2));
-            $g = hexdec(str_repeat(substr($hex, 1, 1), 2));
-            $b = hexdec(str_repeat(substr($hex, 2, 1), 2));
-        } else {
-            $r = hexdec(substr($hex, 0, 2));
-            $g = hexdec(substr($hex, 2, 2));
-            $b = hexdec(substr($hex, 4, 2));
+        // Expand 3-digit shorthand to 6-digit
+        if (strlen($hex) === 3) {
+            $hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
         }
 
+        // For 8-digit hex, keep only the first 6 characters (ignore alpha)
+        if (strlen($hex) === 8) {
+            $hex = substr($hex, 0, 6);
+        }
+
+        // Validate hex length and characters
+        if (strlen($hex) !== 6 || !ctype_xdigit($hex)) {
+            // Return a fallback (black) for invalid input
+            return '0, 0, 0';
+        }
+
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
+
         return "$r, $g, $b";
+    }
+
+    /**
+     * Normalizes a description string by removing HTML tags and collapsing all
+     * whitespace characters (including newlines, tabs, and multiple spaces) into
+     * a single space, then trims the result.
+     *
+     * This method is useful for cleaning user-generated content or input data
+     * to obtain a plain, single-line string without any HTML formatting.
+     *
+     * @param string $description The raw description string to normalize.
+     *
+     * @return string The normalized string with HTML tags removed, all whitespace
+     *                reduced to single spaces, and leading/trailing whitespace trimmed.
+     */
+    private function normalizeContent(string $description): string
+    {
+        return trim(
+            preg_replace(
+                ['/[\r\n\t]+/', '/\s+/i'], // Combine newlines, tabs, and spaces
+                [' ', ' '],            // Replace them with single space or empty string
+                strip_tags($description) // Strip tags
+            )
+        );
     }
 }
