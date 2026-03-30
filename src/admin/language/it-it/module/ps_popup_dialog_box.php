@@ -8,7 +8,7 @@ $_['text_extension']            = 'Estensioni';
 $_['text_success']              = 'Successo: hai modificato il modulo Popup Dialog Box!';
 $_['text_edit']                 = 'Modifica modulo Popup Dialog Box';
 $_['text_layout']               = 'Dopo aver configurato il modulo, puoi aggiungerlo a un layout <a href="%s" class="alert-link">qui</a>!';
-$_['text_contact']              = '<p>Per ulteriori chiarimenti, si prega di contattare il nostro team di assistenza:</p><ul><li><strong>Contatto:</strong> <a href="mailto:%s">%s</a></li><li><strong>Documentazione:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Documentazione utente</a></li></ul>';
+$_['text_contact']              = '<p>Per ulteriore assistenza, si prega di contattare il nostro team di supporto:</p><ul><li><strong>Sito web di supporto:</strong> <a href="%1$s">%1$s</a></li><li><strong>Repository GitHub:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Contatta il supporto:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = 'in alto a sinistra';
 $_['text_top_center']           = 'in alto al centro';
 $_['text_top_right']            = 'in alto a destra';
@@ -59,7 +59,7 @@ $_['entry_height']              = 'Altezza';
 $_['entry_status']              = 'Stato';
 
 // Button
-$_['btn_generate_cookie_name']  = 'Genera nome cookie';
+$_['button_generate_cookie_name']  = 'Genera nome cookie';
 
 // Help
 $_['help_cookie_name']          = 'Identifica lo stato del popup nel browser (mostrato o chiuso). Deve essere univoco. Usa solo lettere, numeri e trattini bassi.';

@@ -8,7 +8,7 @@ $_['text_extension']            = 'Rozšírenia';
 $_['text_success']              = 'Úspech: Upravili ste modul Popup Dialog Box!';
 $_['text_edit']                 = 'Upraviť modul Popup Dialog Box';
 $_['text_layout']               = 'Po konfigurácii modulu ho môžete pridať do rozvrhnutia <a href="%s" class="alert-link">tu</a>!';
-$_['text_contact']              = '<p>Pre ďalšiu pomoc sa prosím obráťte na náš tím podpory:</p><ul><li><strong>Kontakt:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentácia:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Používateľská dokumentácia</a></li></ul>';
+$_['text_contact']              = '<p>Ak potrebujete ďalšiu pomoc, obráťte sa na náš tím podpory:</p><ul><li><strong>Webová stránka podpory:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub repozitár:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Kontaktovať podporu:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = 'hore vľavo';
 $_['text_top_center']           = 'hore v strede';
 $_['text_top_right']            = 'hore vpravo';
@@ -59,7 +59,7 @@ $_['entry_height']              = 'Výška';
 $_['entry_status']              = 'Stav';
 
 // Button
-$_['btn_generate_cookie_name']  = 'Generovať názov cookie';
+$_['button_generate_cookie_name']  = 'Generovať názov cookie';
 
 // Help
 $_['help_cookie_name']          = 'Identifikuje stav vyskakovacieho okna v prehliadači (zobrazené alebo zatvorené). Musí byť unikátny. Používajte iba písmená, číslice a podčiarkovníky.';

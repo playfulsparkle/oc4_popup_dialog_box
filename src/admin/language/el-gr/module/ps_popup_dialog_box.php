@@ -8,7 +8,7 @@ $_['text_extension']            = 'Επεκτάσεις';
 $_['text_success']              = 'Επιτυχία: Έχετε τροποποιήσει την ενότητα Popup Dialog Box!';
 $_['text_edit']                 = 'Επεξεργασία ενότητας Popup Dialog Box';
 $_['text_layout']               = 'Αφού ρυθμίσετε την ενότητα, μπορείτε να την προσθέσετε σε μια διάταξη <a href="%s" class="alert-link">εδώ</a>!';
-$_['text_contact']              = '<p>Για περαιτέρω βοήθεια, επικοινωνήστε με την ομάδα υποστήριξής μας:</p><ul><li><strong>Επικοινωνία:</strong> <a href="mailto:%s">%s</a></li><li><strong>Τεκμηρίωση:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Τεκμηρίωση χρήστη</a></li></ul>';
+$_['text_contact']              = '<p>Για περαιτέρω βοήθεια, επικοινωνήστε με την ομάδα υποστήριξής μας:</p><ul><li><strong>Ιστότοπος Υποστήριξης:</strong> <a href="%1$s">%1$s</a></li><li><strong>Αποθετήριο GitHub:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Επικοινωνία με την Υποστήριξη:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = 'πάνω αριστερά';
 $_['text_top_center']           = 'πάνω κέντρο';
 $_['text_top_right']            = 'πάνω δεξιά';
@@ -59,7 +59,7 @@ $_['entry_height']              = 'Ύψος';
 $_['entry_status']              = 'Κατάσταση';
 
 // Button
-$_['btn_generate_cookie_name']  = 'Δημιουργία ονόματος Cookie';
+$_['button_generate_cookie_name']  = 'Δημιουργία ονόματος Cookie';
 
 // Help
 $_['help_cookie_name']          = 'Προσδιορίζει την κατάσταση του αναδυόμενου παραθύρου στο πρόγραμμα περιήγησης (εμφανισμένο ή κλειστό). Πρέπει να είναι μοναδικό. Χρησιμοποιήστε μόνο γράμματα, αριθμούς και κάτω παύλες.';

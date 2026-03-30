@@ -1,3 +1,3 @@
 <?php
 // Button
-$_['btn_close_popup'] = 'Chiudi finestra pop-up';
+$_['button_close_popup'] = 'Chiudi finestra pop-up';

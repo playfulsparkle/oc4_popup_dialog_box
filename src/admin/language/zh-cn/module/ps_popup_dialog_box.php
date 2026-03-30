@@ -8,7 +8,7 @@ $_['text_extension']            = '扩展功能';
 $_['text_success']              = '成功：您已修改 Popup Dialog Box 模块！';
 $_['text_edit']                 = '编辑 Popup Dialog Box 模块';
 $_['text_layout']               = '配置模块后，您可以在「<a href="%s" class="alert-link">此处</a>」将其添加到布局中！';
-$_['text_contact']              = '<p>如需进一步协助，请联系我们的支持团队：</p><ul><li><strong>联系方式：</strong> <a href="mailto:%s">%s</a></li><li><strong>说明文档：</strong> <a href="%s" target="_blank" rel="noopener noreferrer">用户文档</a></li></ul>';
+$_['text_contact']              = '<p>如需进一步协助，请联系我们的支持团队：</p><ul><li><strong>支持网站：</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub 仓库：</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>联系支持：</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = '左上角';
 $_['text_top_center']           = '顶部居中';
 $_['text_top_right']            = '右上角';
@@ -59,7 +59,7 @@ $_['entry_height']              = '高度';
 $_['entry_status']              = '状态';
 
 // Button
-$_['btn_generate_cookie_name']  = '生成Cookie名称';
+$_['button_generate_cookie_name']  = '生成Cookie名称';
 
 // Help
 $_['help_cookie_name']          = '用于标识浏览器中的弹出状态（已显示或已关闭）。必须是唯一的。仅使用字母、数字和下划线。';

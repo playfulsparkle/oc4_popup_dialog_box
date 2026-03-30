@@ -8,7 +8,7 @@ $_['text_extension']            = 'Разширения';
 $_['text_success']              = 'Успех: Променихте модула Popup Dialog Box!';
 $_['text_edit']                 = 'Редактиране на модула Popup Dialog Box';
 $_['text_layout']               = 'След като конфигурирате модула, можете да го добавите към оформлението от <a href="%s" class="alert-link">тук</a>!';
-$_['text_contact']              = '<p>За допълнително съдействие, моля, свържете се с нашия екип по поддръжка:</p><ul><li><strong>Контакт:</strong> <a href="mailto:%s">%s</a></li><li><strong>Документация:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Потребителска документация</a></li></ul>';
+$_['text_contact']              = '<p>За допълнително съдействие, моля, свържете се с нашия екип за поддръжка:</p><ul><li><strong>Уебсайт за поддръжка:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub хранилище:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Контакт с поддръжката:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = 'горе вляво';
 $_['text_top_center']           = 'горе в центъра';
 $_['text_top_right']            = 'горе вдясно';
@@ -59,7 +59,7 @@ $_['entry_height']              = 'Височина';
 $_['entry_status']              = 'Статус';
 
 // Button
-$_['btn_generate_cookie_name']  = 'Генериране име на бисквитка';
+$_['button_generate_cookie_name']  = 'Генериране име на бисквитка';
 
 // Help
 $_['help_cookie_name']          = 'Идентифицира състоянието на изскачащия прозорец в браузъра (показан или затворен). Трябва да е уникално. Използвайте само букви, цифри и долни черти.';

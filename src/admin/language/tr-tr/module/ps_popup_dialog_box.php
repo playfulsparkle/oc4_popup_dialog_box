@@ -8,7 +8,7 @@ $_['text_extension']            = 'Eklentiler';
 $_['text_success']              = 'Başarılı: Popup Dialog Box modülünü değiştirdiniz!';
 $_['text_edit']                 = 'Popup Dialog Box Modülünü Düzenle';
 $_['text_layout']               = 'Modülü yapılandırdıktan sonra bir yerleşime <a href="%s" class="alert-link">buradan</a> ekleyebilirsiniz!';
-$_['text_contact']              = '<p>Daha fazla yardım için lütfen destek ekibimizle iletişime geçin:</p><ul><li><strong>İletişim:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokümantasyon:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Kullanıcı Dokümantasyonu</a></li></ul>';
+$_['text_contact']              = '<p>Daha fazla yardım için lütfen destek ekibimizle iletişime geçin:</p><ul><li><strong>Destek Web Sitesi:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub Deposu:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Destekle İletişime Geçin:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = 'sol üst';
 $_['text_top_center']           = 'üst orta';
 $_['text_top_right']            = 'sağ üst';
@@ -59,7 +59,7 @@ $_['entry_height']              = 'Yükseklik';
 $_['entry_status']              = 'Durum';
 
 // Button
-$_['btn_generate_cookie_name']  = 'Çerez Adı Oluştur';
+$_['button_generate_cookie_name']  = 'Çerez Adı Oluştur';
 
 // Help
 $_['help_cookie_name']          = 'Tarayıcıdaki açılır pencere durumunu (gösterildi veya kapatıldı) tanımlar. Benzersiz olmalıdır. Sadece harf, rakam ve alt çizgi kullanın.';

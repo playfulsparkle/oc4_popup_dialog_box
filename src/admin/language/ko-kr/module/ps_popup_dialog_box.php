@@ -8,7 +8,7 @@ $_['text_extension']            = '확장 모듈';
 $_['text_success']              = '성공: Popup Dialog Box 모듈을 수정하였습니다.';
 $_['text_edit']                 = 'Popup Dialog Box 모듈 편집';
 $_['text_layout']               = '모듈 설정 후 <a href="%s" class="alert-link">여기</a>에서 레이아웃에 추가할 수 있습니다.';
-$_['text_contact']              = '<p>추가 도움이 필요하시면 지원 팀에 문의해 주십시오.</p><ul><li><strong>연락처:</strong> <a href="mailto:%s">%s</a></li><li><strong>설명서:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">사용자 설명서</a></li></ul>';
+$_['text_contact']              = '<p>추가적인 도움이 필요하시면 당사의 지원 팀에 문의해 주시기 바랍니다.</p><ul><li><strong>지원 웹사이트:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub 저장소:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>지원 문의:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = '왼쪽 상단';
 $_['text_top_center']           = '중앙 상단';
 $_['text_top_right']            = '오른쪽 상단';
@@ -59,7 +59,7 @@ $_['entry_height']              = '높이';
 $_['entry_status']              = '상태';
 
 // Button
-$_['btn_generate_cookie_name']  = '쿠키 이름 생성';
+$_['button_generate_cookie_name']  = '쿠키 이름 생성';
 
 // Help
 $_['help_cookie_name']          = '브라우저에서 팝업 상태(표시됨 또는 닫힘)를 식별합니다. 고유해야 합니다. 영문자, 숫자, 언더스코어(_)만 사용하십시오.';

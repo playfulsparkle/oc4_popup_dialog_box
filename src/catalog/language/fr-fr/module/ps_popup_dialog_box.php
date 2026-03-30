@@ -1,3 +1,3 @@
 <?php
 // Button
-$_['btn_close_popup'] = 'Fermer la fenêtre contextuelle';
+$_['button_close_popup'] = 'Fermer la fenêtre contextuelle';

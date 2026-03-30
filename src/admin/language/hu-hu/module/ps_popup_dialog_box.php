@@ -8,7 +8,7 @@ $_['text_extension']            = 'Bővítmények';
 $_['text_success']              = 'Siker: Ön módosította a Popup Dialog Box modult!';
 $_['text_edit']                 = 'A Popup Dialog Box modul szerkesztése';
 $_['text_layout']               = 'A modul konfigurálása után <a href="%s" class="alert-link">itt</a> adhatja hozzá egy elrendezéshez!';
-$_['text_contact']              = '<p>További segítségért kérjük, vegye fel a kapcsolatot ügyfélszolgálati csapatunkkal:</p><ul><li><strong>Kapcsolat:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentáció:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Felhasználói dokumentáció</a></li></ul>';
+$_['text_contact']              = '<p>További segítségért forduljon bizalommal ügyfélszolgálatunkhoz:</p><ul><li><strong>Támogatási weboldal:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub tárhely:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Kapcsolatfelvétel:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = 'bal felső';
 $_['text_top_center']           = 'fent középen';
 $_['text_top_right']            = 'jobb felső';
@@ -59,7 +59,7 @@ $_['entry_height']              = 'Magasság';
 $_['entry_status']              = 'Állapot';
 
 // Button
-$_['btn_generate_cookie_name']  = 'Süti név generálása';
+$_['button_generate_cookie_name']  = 'Süti név generálása';
 
 // Help
 $_['help_cookie_name']          = 'Azonosítja a felugró ablak állapotát a böngészőben (megjelenített vagy zárt). Egyedinek kell lennie. Csak betűket, számokat és alulvonásokat használjon.';

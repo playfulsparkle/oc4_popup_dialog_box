@@ -8,7 +8,7 @@ $_['text_extension']            = '拡張機能';
 $_['text_success']              = '成功: Popup Dialog Box モジュールを更新しました。';
 $_['text_edit']                 = 'Popup Dialog Box モジュールの編集';
 $_['text_layout']               = 'モジュールの設定後、<a href="%s" class="alert-link">こちら</a>からレイアウトに追加できます。';
-$_['text_contact']              = '<p>さらなる支援が必要な場合は、弊社のサポートチームまでご連絡ください。</p><ul><li><strong>連絡先:</strong> <a href="mailto:%s">%s</a></li><li><strong>ドキュメント:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">ユーザーマニュアル</a></li></ul>';
+$_['text_contact']              = '<p>さらなるサポートが必要な場合は、弊社のサポートチームまでお問い合わせください。</p><ul><li><strong>サポートウェブサイト:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub リポジトリ:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>サポートへの連絡:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = '左上';
 $_['text_top_center']           = '中央上';
 $_['text_top_right']            = '右上';
@@ -59,7 +59,7 @@ $_['entry_height']              = '高さ';
 $_['entry_status']              = 'ステータス';
 
 // Button
-$_['btn_generate_cookie_name']  = 'クッキー名を生成';
+$_['button_generate_cookie_name']  = 'クッキー名を生成';
 
 // Help
 $_['help_cookie_name']          = 'ブラウザ内でのポップアップの状態（表示済みまたは終了済み）を識別します。一意である必要があります。英数字とアンダースコアのみを使用してください。';

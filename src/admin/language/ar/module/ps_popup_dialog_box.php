@@ -8,7 +8,7 @@ $_['text_extension']            = 'الإضافات';
 $_['text_success']              = 'تم بنجاح: لقد قمت بتعديل موديل Popup Dialog Box!';
 $_['text_edit']                 = 'تعديل موديل Popup Dialog Box';
 $_['text_layout']               = 'بعد تهيئة الموديل، يمكنك إضافته إلى التخطيط من «<a href="%s" class="alert-link">هنا</a>»!';
-$_['text_contact']              = '<p>للحصول على مزيد من المساعدة، يرجى التواصل مع فريق الدعم لدينا:</p><ul><li><strong>للاتصال:</strong> <a href="mailto:%s">%s</a></li><li><strong>وثائق الاستخدام:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">وثائق المستخدم</a></li></ul>';
+$_['text_contact']              = '<p>للمزيد من المساعدة، يرجى التواصل مع فريق الدعم لدينا:</p><ul><li><strong>موقع الدعم:</strong> <a href="%1$s">%1$s</a></li><li><strong>مستودع GitHub:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>الاتصال بالدعم:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_top_left']             = 'أعلى اليسار';
 $_['text_top_center']           = 'أعلى الوسط';
 $_['text_top_right']            = 'أعلى اليمين';
@@ -59,7 +59,7 @@ $_['entry_height']              = 'الارتفاع';
 $_['entry_status']              = 'الحالة';
 
 // Button
-$_['btn_generate_cookie_name']  = 'توليد اسم ملف تعريف الارتباط';
+$_['button_generate_cookie_name']  = 'توليد اسم ملف تعريف الارتباط';
 
 // Help
 $_['help_cookie_name']          = 'يحدد حالة المنبثقة في المتصفح (مفتوحة أو مغلقة). يجب أن يكون فريداً. استخدم الأحرف والأرقام والشرطات السفلية فقط.';

@@ -1,3 +1,3 @@
 <?php
 // Button
-$_['btn_close_popup'] = 'Zatvoriť vyskakovacie okno';
+$_['button_close_popup'] = 'Zatvoriť vyskakovacie okno';
